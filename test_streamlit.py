@@ -1,6 +1,6 @@
 import streamlit as st
 import os, glob
-from pathlib import Path
+
 
 st.title("ABSA TOOL")
 uploaded_file = st.file_uploader('UPLOAD FILE')
@@ -16,9 +16,15 @@ with open('data/test20/testing.txt', 'w+') as txt_reader:
 	st.write(string)
 
 if st.button('PROCESS'):
-	st.write('Process started.')
-	os.system("sh work.sh")
-	st.write('Process finished.')
+	st.header('Process started.')
+	os.system("sh work.sh > mylog.txt")
+	with open('mylog.txt', 'r') as log:
+		lines = log.readlines()
+	for line in lines:
+		st.write("{}".format(line.strip()))
+	st.header('Process finished.')
+
+
 
 
 #for filename in glob.glob("data/test20/testing.txt"):
@@ -29,3 +35,4 @@ if st.button('PROCESS'):
 #
 for filename in glob.glob("data/test20/cached*"):
    os.remove(filename)
+
