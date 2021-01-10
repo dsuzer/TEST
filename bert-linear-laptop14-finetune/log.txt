@@ -1,0 +1,40 @@
+
+In run 0/5 (seed 42):
+	Validation:
+		dev-micro-f1_1100: 0.57138, dev-eval_loss_1100: 0.17229
+		dev-micro-f1_1200: 0.57362, dev-eval_loss_1200: 0.17605
+		dev-micro-f1_1300: 0.57910, dev-eval_loss_1300: 0.17941
+		dev-micro-f1_1400: 0.57305, dev-eval_loss_1400: 0.17750
+		dev-micro-f1_1500: 0.58148, dev-eval_loss_1500: 0.17668
+	Step 100:
+		precision: 0.4076, recall: 0.2539, micro-f1: 0.3129, macro-f1: 0.2065
+	Step 200:
+		precision: 0.4815, recall: 0.4101, micro-f1: 0.4429, macro-f1: 0.3188
+	Step 300:
+		precision: 0.5483, recall: 0.4748, micro-f1: 0.5088, macro-f1: 0.3807
+	Step 400:
+		precision: 0.6071, recall: 0.5410, micro-f1: 0.5721, macro-f1: 0.4997
+	Step 500:
+		precision: 0.5946, recall: 0.5599, micro-f1: 0.5767, macro-f1: 0.5006
+	Step 600:
+		precision: 0.6207, recall: 0.5678, micro-f1: 0.5930, macro-f1: 0.5247
+	Step 700:
+		precision: 0.6285, recall: 0.5978, micro-f1: 0.6127, macro-f1: 0.5522
+	Step 800:
+		precision: 0.6179, recall: 0.5868, micro-f1: 0.6019, macro-f1: 0.5392
+	Step 900:
+		precision: 0.6446, recall: 0.5836, micro-f1: 0.6125, macro-f1: 0.5711
+	Step 1000:
+		precision: 0.6086, recall: 0.6009, micro-f1: 0.6047, macro-f1: 0.5472
+	Step 1100:
+		precision: 0.6426, recall: 0.5899, micro-f1: 0.6151, macro-f1: 0.5688
+	Step 1200:
+		precision: 0.6415, recall: 0.5899, micro-f1: 0.6146, macro-f1: 0.5581
+	Step 1300:
+		precision: 0.6397, recall: 0.5994, micro-f1: 0.6188, macro-f1: 0.5665
+	Step 1400:
+		precision: 0.6374, recall: 0.5962, micro-f1: 0.6161, macro-f1: 0.5659
+	Step 1500:
+		precision: 0.6351, recall: 0.5931, micro-f1: 0.6133, macro-f1: 0.5626
+	Best checkpoint: bert-linear-laptop14-finetune/checkpoint-1500
+******************************************
