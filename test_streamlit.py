@@ -2,7 +2,7 @@ import streamlit as st
 import os, glob
 
 
-st.title("ABSA TOOL")
+st.title("ABSA TOOL - DSUZER")
 uploaded_file = st.file_uploader('UPLOAD FILE')
 if uploaded_file is not None:
 	with open('data/test20/upload_test.txt', 'w+') as txt_uploader:
