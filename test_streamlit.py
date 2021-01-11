@@ -1,7 +1,6 @@
 import streamlit as st
 import os, glob
 
-
 st.title("ABSA TOOL - DSUZER")
 uploaded_file = st.file_uploader('UPLOAD FILE')
 if uploaded_file is not None:
@@ -29,10 +28,10 @@ if st.button('PROCESS'):
 
 #for filename in glob.glob("data/test20/testing.txt"):
 #	os.remove(filename)
-#
+
 #for filename in glob.glob("data/test20/upload_test.txt"):
 #	os.remove(filename)
-#
+
 for filename in glob.glob("data/test20/cached*"):
    os.remove(filename)
 
