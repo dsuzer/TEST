@@ -2,18 +2,3 @@ Load checkpoint ./bert-linear-laptop14-finetune/checkpoint-1500/pytorch_model.bi
 test class count: [4. 5. 1.]
 maximal sequence length is 49
 ***** Running prediction *****
-Input: Boot time is super fast , around anywhere from 35 seconds to 1 minute ., output: ['Boot', 'time']: POS
-Input: tech support would not fix the problem unless I bought your plan for $ 150 plus ., output: ['tech', 'support']: NEG
-Input: but in resume this computer rocks !, output: 
-Input: Set up was easy ., output: ['Set', 'up']: POS
-Input: Did not enjoy the new Windows 8 and touchscreen functions ., output: ['Windows', '8']: NEG	['touchscreen', 'functions']: NEG
-Input: I expected so as it 's an Apple product , but I was glad to see my expectations exceeded , this is THE laptop to buy right now ., output: 
-Input: Other than not being a fan of click pads industry standard these days and the lousy internal speakers , it 's hard for me to find things about this notebook I do n't like , especially considering the $ 350 price tag ., output: ['click', 'pads']: NEG	['internal', 'speakers']: NEG
-Input: excellent in every way ., output: 
-Input: No installation disk (DVD) is included ., output: 
-Input: It 's fast , light , and simple to use ., output: ['use']: POS
-class_count: [4. 5. 1.]
-macro-f1: 0.6189997980317204
-precision: 0.999987500156248
-recall: 0.7999920000799993
-micro-f1: 0.8888296324690145
