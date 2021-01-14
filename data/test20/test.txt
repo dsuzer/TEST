@@ -1,1 +1,1 @@
-the screen is really good.####the=O screen=O is=O really=O good.=O
+the screen is not that good####the=O screen=O is=O not=O that=O good=O

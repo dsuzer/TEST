@@ -27,6 +27,8 @@ if st.button('PROCESS'):
 	output_dict = pickle.load(infile)
 	st.write(output_dict)
 	infile.close()
+	for filename in glob.glob("output_dict"):
+   		os.remove(filename)
 	st.header('Process finished.')
 
 
