@@ -23,7 +23,7 @@ if st.button('PROCESS'):
 	st.header('Process started.')
 	os.system("sh work.sh")
 	filename = 'output_dict'
-	infile = open(filename,'r+')
+	infile = open(filename,'rb+')
 	output_dict = pickle.load(infile)
 	st.write(output_dict)
 	infile.close()
