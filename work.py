@@ -2,6 +2,7 @@ import argparse
 import os
 import torch
 import numpy as np
+import pickle
 
 from glue_utils import convert_examples_to_seq_features, compute_metrics_absa, ABSAProcessor
 from tqdm import tqdm
@@ -115,7 +116,7 @@ def main():
     _, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
 
     # load the trained model (including the fine-tuned GPT/BERT/XLNET)
-    print("Load checkpoint %s/%s..." % (args.ckpt, WEIGHTS_NAME))
+    #print("Load checkpoint %s/%s..." % (args.ckpt, WEIGHTS_NAME))
     model = model_class.from_pretrained(args.ckpt)
     # follow the property of tokenizer in the loaded model, e.g., do_lower_case=True
     tokenizer = tokenizer_class.from_pretrained(args.absa_home)
@@ -129,7 +130,7 @@ def predict(args, model, tokenizer):
     sampler = SequentialSampler(dataset)
     # process the incoming data one by one
     dataloader = DataLoader(dataset, sampler=sampler, batch_size=1)
-    print("***** Running prediction *****")
+    #print("***** Running prediction *****")
 
     total_preds, gold_labels = None, None
     idx = 0
@@ -185,7 +186,11 @@ def predict(args, model, tokenizer):
                 beg, end, sentiment = t
                 aspect = words[beg:end+1]
                 output_ts.append('%s: %s' % (aspect, sentiment))
-            print("Input: %s, output: %s" % (' '.join(words), '\t'.join(output_ts)))
+            filename = 'output_dict'
+            outfile = open(filename,'wb')
+            pickle.dump(output_ts,outfile)
+            outfile.close()
+            print("Input: %s Output: %s" % (' '.join(words), '\t'.join(output_ts)))
             # for evaluation
             if total_preds is None:
                 total_preds = preds
@@ -201,8 +206,8 @@ def predict(args, model, tokenizer):
     if gold_labels is not None:
         result = compute_metrics_absa(preds=total_preds, labels=gold_labels, all_evaluate_label_ids=evaluate_label_ids,
                                       tagging_schema=args.tagging_schema)
-        for (k, v) in result.items():
-            print("%s: %s" % (k, v))
+        #for (k, v) in result.items():
+            #print("%s: %s" % (k, v))
 
 
 if __name__ == "__main__":

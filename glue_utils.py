@@ -168,7 +168,7 @@ class ABSAProcessor(DataProcessor):
                         class_count[2] += 1
                 examples.append(InputExample(guid=guid, text_a=text_a, text_b=None, label=tags))
                 sample_id += 1
-        print("%s class count: %s" % (set_type, class_count))
+        #print("%s class count: %s" % (set_type, class_count))
         return examples
 
 
@@ -292,7 +292,7 @@ def convert_examples_to_seq_features(examples, label_list, tokenizer,
                              segment_ids=segment_ids,
                              label_ids=label_ids,
                              evaluate_label_ids=evaluate_label_ids))
-    print("maximal sequence length is", max_seq_length)
+    #print("maximal sequence length is", max_seq_length)
     return features
 
 
@@ -503,7 +503,7 @@ def compute_metrics_absa(preds, labels, all_evaluate_label_ids, tagging_schema):
     n_tp_total = sum(n_tp_ts)
     # TP + FN
     n_g_total = sum(n_gold_ts)
-    print("class_count:", class_count)
+    #print("class_count:", class_count)
 
     # TP + FP
     n_p_total = sum(n_pred_ts)
