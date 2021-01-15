@@ -1,11 +1,13 @@
 import streamlit as st
 import os, glob
 import pickle
+import time
 
 
 st.title("ABSA TOOL - DSUZER")
 uploaded_file = st.file_uploader('UPLOAD FILE')
 if uploaded_file is not None:
+	uploaded_file.seek(0)
 	with open('data/test20/upload_test.txt', 'w+') as txt_uploader:
 		txt_uploader.write(str(uploaded_file.read()))
 	st.write('File successfully uploaded.')
@@ -20,14 +22,15 @@ with open('data/test20/test.txt', 'w+') as txt_reader:
 
 
 if st.button('PROCESS'):
-	st.header('Process started.')
+	with st.spinner('Processing...'):
+		time.sleep(5)
 	os.system("sh work.sh")
 	filename = 'output_dict'
 	infile = open(filename,'rb+')
 	output_dict = pickle.load(infile)
 	st.write(output_dict)
 	infile.close()
-	st.header('Process finished.')
+	st.success('Done!')
 
 
 
