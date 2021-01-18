@@ -25,11 +25,13 @@ if st.button('PROCESS'):
 	with st.spinner('Processing...'):
 		time.sleep(5)
 	os.system("sh work.sh")
-	filename = 'output_dict'
-	infile = open(filename,'rb+')
-	output_dict = pickle.load(infile)
-	st.write(output_dict)
-	infile.close()
+	with open('myfile.pickle','rb+') as fin:
+		output = pickle.load(fin)
+	#filename = 'output_var'
+	#infile = open(filename,'rb+')
+	#output = pickle.load(infile)
+	st.write(output)
+	#infile.close()
 	st.success('Done!')
 
 

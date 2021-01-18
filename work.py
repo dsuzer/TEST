@@ -186,10 +186,12 @@ def predict(args, model, tokenizer):
                 beg, end, sentiment = t
                 aspect = words[beg:end+1]
                 output_ts.append('%s: %s' % (aspect, sentiment))
-            filename = 'output_dict'
-            outfile = open(filename,'wb+')
-            pickle.dump(output_ts,outfile)
-            outfile.close()
+            with open('myfile.pickle','wb+') as fout:
+                pickle.dump(output_ts,fout)
+            #filename = 'output_var'
+            #outfile = open(filename,'wb+')
+            #pickle.dump(output_ts,outfile)
+            #outfile.close()
             print("Input: %s Output: %s" % (' '.join(words), '\t'.join(output_ts)))
             # for evaluation
             if total_preds is None:
